@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>روشنا — فروشگاه روشنایی</title>
+<meta name="description" content="کاتالوگ لوستر، نور خطی و چراغ‌های دکوراتیو روشنا؛ نماینده‌ی رسمی ستاره شمال در شمال‌غرب کشور. مدل، ابعاد و استعلام قیمت در یک‌جا.">
+<style>
+@font-face{font-family:Yekan;src:url(fonts/YekanBakhFaNum-Thin.woff2) format("woff2");font-weight:100;font-display:swap}
+@font-face{font-family:Yekan;src:url(fonts/YekanBakhFaNum-Light.woff2) format("woff2");font-weight:300;font-display:swap}
+@font-face{font-family:Yekan;src:url(fonts/YekanBakhFaNum-Regular.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Yekan;src:url(fonts/YekanBakhFaNum-Bold.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:Yekan;src:url(fonts/YekanBakhFaNum-Black.woff2) format("woff2");font-weight:900;font-display:swap}
+:root{
+  --navy:#141a2b; --navy-2:#1d2438; --ink:#0d111c;
+  --amber:#f2cf3c; --amber-soft:#f7e6a1;
+  --paper:#f6f3ec; --paper-2:#ece7dc; --text:#161a24; --muted:#6d6a63; --line:#ddd6c8;
+  --r:14px; --gut:clamp(16px,5vw,72px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Yekan,Tahoma,sans-serif;background:var(--paper);color:var(--text);line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:6px}
+
+/* NAV */
+.nav{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px var(--gut);color:#fff;transition:background .4s,color .4s,padding .4s}
+.nav.solid{background:rgba(246,243,236,.86);color:var(--text);padding-block:12px;border-bottom:1px solid var(--line)}
+.logo{font-weight:900;letter-spacing:.18em;font-size:20px;direction:ltr;color:var(--amber)}
+.nav.solid .logo{color:var(--navy)}
+.nav ul{display:flex;gap:34px;list-style:none;font-size:15px;opacity:.85}
+.nav ul a:hover{opacity:1;color:var(--amber)}
+.list-btn{display:flex;align-items:center;gap:8px;font-size:14px;padding:9px 16px;border-radius:99px;border:1px solid currentColor}
+.list-btn b{background:var(--amber);color:var(--ink);border-radius:99px;min-width:22px;height:22px;display:grid;place-items:center;font-size:12px}
+@media(max-width:860px){.nav ul{display:none}}
+
+/* HERO — typographic: a pendant drops in and its light falls on the giant wordmark */
+.nav{background:var(--paper)!important;color:var(--text)!important;border-bottom:1px solid var(--line)}
+.nav .logo{color:var(--navy)!important}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:99px;font-weight:700;font-size:15px;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-amber{background:var(--amber);color:var(--ink)}
+.btn-dark{background:var(--navy);color:#fff}
+.btn-ghost{border:1px solid rgba(255,255,255,.3);color:#fff}
+.hero{height:240vh;position:relative;background:var(--ink)}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:var(--ink)}
+.stage::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 34% 60% at 50% 34%,rgba(255,200,110,calc(var(--on,0)*.22)),transparent 70%)}
+#lamp3d{position:absolute;left:50%;top:0;transform:translateX(-50%);width:min(560px,90vw);height:52vh;z-index:2}
+.word{position:absolute;inset-inline:0;bottom:19vh;text-align:center;font-weight:900;line-height:.9;letter-spacing:-.03em;
+  font-size:clamp(130px,29vw,470px);color:transparent;-webkit-background-clip:text;background-clip:text;user-select:none;
+  background-image:radial-gradient(ellipse 62% 120% at 50% -25%,
+    rgba(255,232,170,var(--on,0)) 0%,rgba(242,197,80,calc(var(--on,0)*.95)) 30%,
+    rgb(calc(27 + var(--on,0)*40),calc(33 + var(--on,0)*28),calc(49 + var(--on,0)*6)) 72%,#1b2131 100%)}
+.word small{display:block;font-size:13px;letter-spacing:.5em;font-weight:400;color:rgba(255,255,255,calc(.2 + var(--on,0)*.4));-webkit-text-fill-color:currentColor;margin-top:18px;direction:ltr}
+.sub{position:absolute;inset-inline:var(--gut);bottom:5vh;display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;color:#fff;
+  opacity:var(--s,0);transform:translateY(calc((1 - var(--s,0))*16px));z-index:3}
+.sub p{max-width:420px;color:rgba(255,255,255,.7);font-weight:300;font-size:15px}
+.sub p b{display:block;color:#fff;font-size:clamp(18px,1.8vw,22px);font-weight:700;margin-bottom:4px}
+.sub .ctas{display:flex;gap:10px;flex-wrap:wrap}
+.hint{position:absolute;bottom:4vh;left:50%;transform:translateX(-50%);font-size:12px;color:rgba(255,255,255,.4);letter-spacing:.2em;opacity:calc(1 - var(--s,0)*3)}
+@media(max-width:767px){#lamp3d{height:46vh}.word{bottom:26vh}.sub{flex-direction:column;align-items:stretch}.sub .ctas .btn{flex:1;justify-content:center}}
+
+/* SECTIONS */
+section{padding:clamp(80px,12vw,160px) var(--gut)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:56px;flex-wrap:wrap}
+.kicker{font-size:13px;color:var(--muted);letter-spacing:.2em;display:flex;align-items:center;gap:10px}
+.kicker::before{content:"";width:28px;height:1px;background:currentColor}
+h2{font-size:clamp(28px,4vw,52px);font-weight:900;line-height:1.25;margin-top:10px;max-width:640px}
+h2 em{font-style:normal;color:var(--muted);font-weight:300}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* CATEGORIES */
+.cats{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.cat{background:var(--paper);padding:28px 20px;display:flex;flex-direction:column;gap:30px;min-height:170px;transition:background .3s}
+.cat:hover{background:#fff}
+.cat svg{width:40px;height:40px;stroke:var(--navy);fill:none;stroke-width:1.3}
+.cat:hover svg{stroke:#b28f00}
+.cat span{font-weight:700}.cat small{display:block;color:var(--muted);font-weight:400;font-size:13px}
+@media(max-width:1024px){.cats{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.cats{grid-template-columns:repeat(2,1fr)}.cat{min-height:140px}}
+
+/* CATALOG */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.chip{padding:8px 18px;border-radius:99px;border:1px solid var(--line);font-size:14px;transition:.2s}
+.chip[aria-pressed=true]{background:var(--navy);border-color:var(--navy);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 22px}
+.card{display:flex;flex-direction:column}
+.card .ph{aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:var(--paper-2);position:relative}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.card:hover .ph img{transform:scale(1.05)}
+.tag{position:absolute;top:12px;right:12px;background:rgba(246,243,236,.92);font-size:12px;padding:3px 10px;border-radius:99px}
+.card h3{font-size:17px;font-weight:700;margin-top:14px}
+.spec{display:flex;gap:14px;color:var(--muted);font-size:13px;margin-top:2px}
+.card .row{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.price{font-size:13px;color:var(--muted)}
+.add{font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px;padding:7px 14px;border-radius:99px;background:var(--paper-2);transition:.2s}
+.add:hover{background:var(--amber)}
+.add.on{background:var(--navy);color:#fff}
+@media(max-width:1024px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:767px){.grid{grid-template-columns:repeat(2,1fr);gap:22px 12px}.card h3{font-size:15px}.spec{flex-direction:column;gap:0}}
+
+/* PLANNER — signature feature */
+.planner{background:var(--navy);color:#fff;border-radius:28px;margin:0 var(--gut);padding:clamp(28px,6vw,80px);display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,6vw,90px);position:relative;overflow:hidden}
+.planner .kicker{color:var(--amber)}
+.planner h2 em{color:rgba(255,255,255,.5)}
+.planner p.d{color:rgba(255,255,255,.65);margin-top:16px;max-width:440px;font-weight:300}
+.steps{margin-top:30px;display:flex;flex-direction:column;gap:22px}
+.field label{font-size:13px;color:rgba(255,255,255,.55);display:block;margin-bottom:10px}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg button{padding:9px 16px;border-radius:99px;border:1px solid rgba(255,255,255,.18);font-size:14px;transition:.2s}
+.seg button[aria-pressed=true]{background:var(--amber);border-color:var(--amber);color:var(--ink);font-weight:700}
+input[type=range]{width:100%;accent-color:var(--amber)}
+.area{display:flex;justify-content:space-between;font-size:14px}.area b{font-size:22px;color:var(--amber)}
+.room{position:relative;border-radius:20px;overflow:hidden;min-height:420px;background:#0b0e16;display:flex;flex-direction:column;justify-content:end}
+.room .light{position:absolute;inset:0;transition:background .6s;background:radial-gradient(circle at 50% 0,var(--kc,rgba(255,214,140,.55)) 0,transparent var(--spread,55%))}
+.room .floor{position:absolute;inset:auto 0 0;height:35%;background:linear-gradient(transparent,rgba(255,255,255,.04));border-top:1px solid rgba(255,255,255,.06)}
+.room .fx{position:absolute;top:0;inset-inline:0;display:flex;justify-content:space-evenly}
+.room .fx i{width:1px;height:70px;background:#555;position:relative}
+.room .fx i::after{content:"";position:absolute;bottom:-8px;left:-9px;width:18px;height:18px;border-radius:50%;background:var(--kb,#ffdc8c);box-shadow:0 0 30px 8px var(--kb,#ffdc8c)}
+.result{position:relative;padding:24px;background:linear-gradient(transparent,rgba(0,0,0,.65) 30%)}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+.nums div{border-top:1px solid rgba(255,255,255,.18);padding-top:10px}
+.nums small{display:block;font-size:12px;color:rgba(255,255,255,.55)}
+.nums b{font-size:clamp(20px,2.4vw,28px);font-weight:900}
+.result .rec{font-size:14px;color:rgba(255,255,255,.75);margin-bottom:18px}
+@media(max-width:900px){.planner{grid-template-columns:1fr;margin:0;border-radius:0}}
+
+/* WHY / VISIT */
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,60px)}
+.why div b{font-size:44px;font-weight:100;color:#b28f00;display:block;line-height:1}
+.why h3{font-size:19px;margin:16px 0 6px}
+.why p{color:var(--muted);font-size:15px}
+@media(max-width:767px){.why{grid-template-columns:1fr}}
+.brands{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px 40px;padding:40px 0 0;margin-top:70px;border-top:1px solid var(--line);color:var(--muted);font-weight:700;font-size:18px}
+.visit{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;background:var(--paper-2);border-radius:28px;padding:clamp(28px,5vw,64px)}
+.visit dl{display:grid;grid-template-columns:auto 1fr;gap:10px 24px;font-size:15px}.visit dt{color:var(--muted)}
+@media(max-width:767px){.visit{grid-template-columns:1fr}}
+footer{padding:40px var(--gut);display:flex;justify-content:space-between;color:var(--muted);font-size:13px;flex-wrap:wrap;gap:12px}
+
+/* DRAWER */
+.drawer{position:fixed;inset-block:0;left:0;width:min(420px,100%);background:var(--paper);z-index:80;transform:translateX(-102%);transition:transform .5s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column;box-shadow:20px 0 60px rgba(0,0,0,.15)}
+.drawer.open{transform:none}
+.drawer header{display:flex;justify-content:space-between;align-items:center;padding:22px;border-bottom:1px solid var(--line)}
+.drawer ul{list-style:none;flex:1;overflow:auto;padding:12px 22px}
+.drawer li{display:flex;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.drawer li img{width:56px;height:56px;border-radius:10px;object-fit:cover}
+.drawer li div{flex:1}.drawer li small{color:var(--muted);display:block}
+.qty{display:flex;align-items:center;gap:8px}.qty button{width:28px;height:28px;border-radius:50%;border:1px solid var(--line)}
+.drawer .foot{padding:22px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:12px}
+.drawer .foot input{padding:14px;border-radius:12px;border:1px solid var(--line);font:inherit;background:#fff}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+.scrim{position:fixed;inset:0;background:rgba(13,17,28,.4);z-index:70;opacity:0;pointer-events:none;transition:.4s}.scrim.on{opacity:1;pointer-events:auto}
+.fab{position:fixed;bottom:18px;left:18px;z-index:60;display:none}
+@media(max-width:860px){.fab{display:flex}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav" aria-label="منوی اصلی">
+  <a href="#" class="logo">ROSHNA</a>
+  <ul>
+    <li><a href="#catalog">کاتالوگ</a></li>
+    <li><a href="#planner">نورسنج اتاق</a></li>
+    <li><a href="#projects">پروژه‌ها</a></li>
+    <li><a href="#visit">بازدید از فروشگاه</a></li>
+  </ul>
+  <button class="list-btn" data-open>لیست استعلام <b data-count>۰</b></button>
+</nav>
+
+<!-- HERO: typographic, lit by a 3D pendant -->
+<header class="hero" id="hero">
+  <div class="stage" id="stage">
+    <canvas id="lamp3d" role="img" aria-label="آویز گنبدی روشنا"></canvas>
+    <h1 class="word">روشنا<small>LIGHTING · TABRIZ</small></h1>
+    <div class="sub">
+      <p><b>مدل، ابعاد و قیمت روز؛ یک‌جا.</b>کاتالوگ لوستر و نور خطی روشنا، نماینده‌ی رسمی ستاره شمال. انتخاب کن و در کمتر از یک ساعت قیمت بگیر.</p>
+      <div class="ctas"><a href="#catalog" class="btn btn-amber">دیدن کاتالوگ ←</a><a href="#planner" class="btn btn-ghost">نورسنج اتاق</a></div>
+    </div>
+    <div class="hint">اسکرول کن</div>
+  </div>
+</header>
+
+<main>
+<section id="cats" aria-labelledby="h-cats">
+  <div class="head reveal"><div><div class="kicker">دسته‌بندی</div><h2 id="h-cats">از کجا شروع کنی؟ <em>از فضایی که می‌خواهی روشن کنی.</em></h2></div></div>
+  <div class="cats reveal">
+    <a class="cat" href="#catalog" data-f="pendant"><svg viewBox="0 0 40 40"><path d="M20 2v14M8 28a12 12 0 0124 0zM17 31a3 3 0 006 0"/></svg><span>لوستر و آویز<small>۴۸ مدل</small></span></a>
+    <a class="cat" href="#catalog" data-f="linear"><svg viewBox="0 0 40 40"><path d="M10 4v10M30 4v10M4 16h32v4H4z"/></svg><span>نور خطی<small>۳۲ مدل</small></span></a>
+    <a class="cat" href="#catalog" data-f="wall"><svg viewBox="0 0 40 40"><path d="M6 6v28M6 20h10l8-8v16l-8-8"/></svg><span>دیوارکوب<small>۲۶ مدل</small></span></a>
+    <a class="cat" href="#catalog" data-f="lamp"><svg viewBox="0 0 40 40"><path d="M12 6h16l5 14H7zM20 20v14M13 34h14"/></svg><span>آباژور<small>۱۹ مدل</small></span></a>
+    <a class="cat" href="#catalog" data-f="cabinet"><svg viewBox="0 0 40 40"><path d="M4 10h32v8H4zM8 22h24"/></svg><span>کنارکابینتی<small>۱۴ مدل</small></span></a>
+    <a class="cat" href="#catalog" data-f="garden"><svg viewBox="0 0 40 40"><path d="M14 4h12l-2 8h-8zM20 12v24M12 36h16"/></svg><span>چراغ پارکی<small>۱۱ مدل</small></span></a>
+  </div>
+</section>
+
+<section id="catalog" aria-labelledby="h-cat" style="padding-top:0">
+  <div class="head reveal">
+    <div><div class="kicker">کاتالوگ</div><h2 id="h-cat">هر مدل، با ابعاد واقعی. <em>قیمت را با یک کلیک بگیر.</em></h2></div>
+  </div>
+  <div class="filters" role="group" aria-label="فیلتر">
+    <button class="chip" aria-pressed="true" data-filter="all">همه</button>
+    <button class="chip" aria-pressed="false" data-filter="pendant">لوستر و آویز</button>
+    <button class="chip" aria-pressed="false" data-filter="linear">نور خطی</button>
+    <button class="chip" aria-pressed="false" data-filter="wall">دیوارکوب</button>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<div id="planner" class="planner reveal" aria-labelledby="h-plan">
+  <div>
+    <div class="kicker">نورسنج اتاق · فقط در روشنا</div>
+    <h2 id="h-plan">نمی‌دانی چه نوری لازم داری؟ <em>سه سؤال، یک جواب دقیق.</em></h2>
+    <p class="d">نوع فضا، متراژ و حس نور را انتخاب کن. نورسنج تعداد چراغ، لومن و رنگ نور مناسب را حساب می‌کند و مدل‌های هماهنگ را مستقیم به لیست استعلامت اضافه می‌کند.</p>
+    <div class="steps">
+      <div class="field"><label>۱. کدام فضا؟</label><div class="seg" data-k="room">
+        <button aria-pressed="true" data-v="living">پذیرایی</button><button aria-pressed="false" data-v="kitchen">آشپزخانه</button><button aria-pressed="false" data-v="bed">اتاق خواب</button><button aria-pressed="false" data-v="shop">مغازه / کافه</button></div></div>
+      <div class="field"><label>۲. متراژ</label><div class="area"><span>متر مربع</span><b id="aval">۲۵</b></div><input type="range" id="area" min="6" max="120" value="25" aria-label="متراژ"></div>
+      <div class="field"><label>۳. چه حسی؟</label><div class="seg" data-k="mood">
+        <button aria-pressed="true" data-v="warm">گرم و دنج</button><button aria-pressed="false" data-v="neutral">طبیعی</button><button aria-pressed="false" data-v="cool">روشن و کاری</button></div></div>
+    </div>
+  </div>
+  <div class="room" aria-live="polite">
+    <div class="light" id="light"></div>
+    <div class="fx" id="fx"></div>
+    <div class="floor"></div>
+    <div class="result">
+      <div class="nums">
+        <div><small>لومن لازم</small><b id="lm">—</b></div>
+        <div><small>تعداد چراغ</small><b id="nf">—</b></div>
+        <div><small>رنگ نور</small><b id="kv">—</b></div>
+      </div>
+      <p class="rec" id="rec"></p>
+      <button class="btn btn-amber" id="addSet">افزودن ست پیشنهادی به لیست</button>
+    </div>
+  </div>
+</div>
+
+<section id="projects" aria-labelledby="h-why">
+  <div class="head reveal"><div><div class="kicker">چرا روشنا</div><h2 id="h-why">انتخاب نور، <em>بدون رفت‌وآمد و حدس.</em></h2></div></div>
+  <div class="why reveal">
+    <div><b>۰۱</b><h3>همه‌چیز یک‌جا</h3><p>مدل، ابعاد، توان و رنگ نور هر محصول روشن نوشته شده؛ دیگر لازم نیست در دایرکت بپرسی.</p></div>
+    <div><b>۰۲</b><h3>استعلام گروهی</h3><p>برای پروژه یا کل خانه، همه‌ی اقلام را در یک لیست بفرست و یک پیش‌فاکتور بگیر.</p></div>
+    <div><b>۰۳</b><h3>مشاوره‌ی پروژه</h3><p>برای کافه، رستوران و ساختمان، نقشه‌ی نورپردازی پیشنهادی با برندهای رسمی.</p></div>
+  </div>
+  <div class="brands reveal" aria-label="برندها"><span>ستاره شمال</span><span>اکووات</span><span>آنتیکو</span><span>آلفا</span><span>بیتانور</span></div>
+</section>
+
+<section id="visit" style="padding-top:0" aria-labelledby="h-visit">
+  <div class="visit reveal">
+    <div><div class="kicker">بازدید حضوری</div><h2 id="h-visit">از نزدیک ببین، <em>روشن و خاموشش کن.</em></h2>
+      <dl style="margin-top:28px"><dt>آدرس</dt><dd>تبریز، بازار فردوسی، جنب بانک ملت</dd><dt>ساعت کاری</dt><dd>شنبه تا پنجشنبه</dd></dl></div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <a class="btn btn-dark" href="https://maps.app.goo.gl/xgW1fzzxb9NxF3B96" target="_blank" rel="noopener">مسیریابی در نقشه</a>
+      <a class="btn" style="border:1px solid var(--line);justify-content:center" href="https://www.instagram.com/roshna_lighting/" target="_blank" rel="noopener">اینستاگرام روشنا</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer><span>© روشنا — فروشگاه روشنایی، تبریز</span><span>پیش‌نمایش طراحی · داده‌های نمونه</span></footer>
+
+<button class="btn btn-amber fab" data-open>لیست استعلام <b data-count style="background:var(--ink);color:#fff;border-radius:99px;padding:0 8px">۰</b></button>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="لیست استعلام قیمت">
+  <header><strong>لیست استعلام قیمت</strong><button id="close" aria-label="بستن">✕</button></header>
+  <ul id="items"></ul>
+  <div class="foot">
+    <input type="tel" placeholder="شماره‌ی موبایل برای دریافت قیمت" aria-label="شماره موبایل">
+    <button class="btn btn-amber" style="justify-content:center">ارسال برای استعلام</button>
+    <small style="color:var(--muted);text-align:center">کارشناس روشنا در ساعت کاری کمتر از یک ساعت پاسخ می‌دهد.</small>
+  </div>
+</aside>
+
+<script>
+const fa=n=>String(n).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
+const P=[
+ {id:1,n:'آویز حلقه‌ای اسپیرال',c:'pendant',img:'img/p5.jpg',d:'Ø ۶۰ سانتی‌متر',w:'۴۸ وات',k:'۳۰۰۰K'},
+ {id:2,n:'لوستر حباب شیشه‌ای',c:'pendant',img:'img/p3.jpg',d:'Ø ۹۰ سانتی‌متر',w:'۲۴ لامپ',k:'۲۷۰۰K'},
+ {id:3,n:'نور خطی آویز مینیمال',c:'linear',img:'img/p2.jpg',d:'۱۲۰ سانتی‌متر',w:'۳۶ وات',k:'۴۰۰۰K'},
+ {id:4,n:'آویز دکوراتیو ستاره شمال',c:'pendant',img:'img/p4.jpg',d:'Ø ۴۵ سانتی‌متر',w:'۳۰ وات',k:'۳۰۰۰K'},
+ {id:5,n:'لوستر مدرن چندشاخه',c:'pendant',img:'img/p6.jpg',d:'Ø ۸۰ سانتی‌متر',w:'۶۰ وات',k:'۳۰۰۰K'},
+ {id:6,n:'دیوارکوب حلقه‌ای',c:'wall',img:'img/p7.jpg',d:'۳۵ × ۱۲ سانتی‌متر',w:'۱۲ وات',k:'۳۰۰۰K'},
+ {id:7,n:'نور خطی سقفی',c:'linear',img:'img/p8.jpg',d:'۱۵۰ سانتی‌متر',w:'۴۰ وات',k:'۴۰۰۰K'},
+ {id:8,n:'دیوارکوب مینیمال',c:'wall',img:'img/p9.jpg',d:'۲۰ × ۸ سانتی‌متر',w:'۸ وات',k:'۲۷۰۰K'},
+];
+const list=new Map();
+const grid=document.getElementById('grid');
+function render(f='all'){
+  grid.innerHTML=P.filter(p=>f==='all'||p.c===f).map(p=>`
+  <article class="card reveal in">
+    <div class="ph"><img src="${p.img}" alt="${p.n} روشنا" loading="lazy"><span class="tag">${p.k}</span></div>
+    <h3>${p.n}</h3>
+    <div class="spec"><span>${p.d}</span><span>${p.w}</span></div>
+    <div class="row"><span class="price">قیمت: استعلام</span>
+    <button class="add ${list.has(p.id)?'on':''}" data-id="${p.id}">${list.has(p.id)?'✓ در لیست':'+ لیست'}</button></div>
+  </article>`).join('');
+}
+render();
+document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('[data-filter]').forEach(x=>x.setAttribute('aria-pressed',x===b));render(b.dataset.filter)});
+document.querySelectorAll('.cat').forEach(a=>a.onclick=()=>{const t=document.querySelector(`[data-filter="${a.dataset.f}"]`)||document.querySelector('[data-filter=all]');t.click()});
+
+function toggle(id,force){const p=P.find(x=>x.id==id);if(list.has(p.id)&&!force)list.delete(p.id);else list.set(p.id,{...p,q:(list.get(p.id)?.q||0)+(force||1)});sync()}
+function sync(){
+  const n=[...list.values()].reduce((a,b)=>a+b.q,0);
+  document.querySelectorAll('[data-count]').forEach(e=>e.textContent=fa(n));
+  document.getElementById('items').innerHTML=list.size?[...list.values()].map(p=>`<li><img src="${p.img}" alt=""><div><b>${p.n}</b><small>${p.d}</small></div>
+  <div class="qty"><button data-q="${p.id}" data-d="1">+</button>${fa(p.q)}<button data-q="${p.id}" data-d="-1">−</button></div></li>`).join(''):'<li class="empty">هنوز محصولی اضافه نکرده‌ای.</li>';
+  const f=document.querySelector('[data-filter][aria-pressed=true]').dataset.filter;render(f);
+}
+sync();
+grid.addEventListener('click',e=>{const b=e.target.closest('.add');if(b)toggle(b.dataset.id)});
+document.getElementById('items').addEventListener('click',e=>{const b=e.target.closest('[data-q]');if(!b)return;const p=list.get(+b.dataset.q);p.q+=+b.dataset.d;if(p.q<1)list.delete(p.id);sync()});
+const drawer=document.getElementById('drawer'),scrim=document.getElementById('scrim');
+const open=v=>{drawer.classList.toggle('open',v);scrim.classList.toggle('on',v)};
+document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>open(true));
+document.getElementById('close').onclick=scrim.onclick=()=>open(false);
+
+/* Planner */
+const st={room:'living',mood:'warm'};
+const LUX={living:150,kitchen:300,bed:100,shop:400};
+const MOOD={warm:['۲۷۰۰K','rgba(255,196,110,.6)','#ffcf80'],neutral:['۴۰۰۰K','rgba(255,240,215,.55)','#fff1d6'],cool:['۶۰۰۰K','rgba(205,225,255,.6)','#dde9ff']};
+const SET={living:[2,6],kitchen:[3,8],bed:[1,8],shop:[7,3]};
+function calc(){
+  const a=+area.value, lm=Math.round(LUX[st.room]*a/50)*50, nf=Math.max(1,Math.ceil(lm/2400));
+  aval.textContent=fa(a);lm_.textContent=fa(lm.toLocaleString('en')).replace(/,/g,'٬');nf_.textContent=fa(nf);
+  const m=MOOD[st.mood];kv.textContent=m[0];
+  light.style.setProperty('--kc',m[1]);light.style.setProperty('--spread',Math.min(90,35+a/2)+'%');
+  document.getElementById('planner').style.setProperty('--kb',m[2]);
+  fx.innerHTML='<i></i>'.repeat(Math.min(nf,6));fx.style.setProperty('--kb',m[2]);
+  const s=SET[st.room].map(i=>P.find(p=>p.id===i).n);
+  rec.textContent=`پیشنهاد: ${fa(nf)} عدد ${s[0]} به‌همراه ${s[1]} برای نور تکمیلی.`;
+}
+const lm_=document.getElementById('lm'),nf_=document.getElementById('nf');
+document.querySelectorAll('.seg').forEach(g=>g.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+  g.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));st[g.dataset.k]=b.dataset.v;calc()}));
+area.oninput=calc;calc();
+addSet.onclick=()=>{const nf=Math.max(1,Math.ceil(LUX[st.room]*area.value/2400));const [x,y]=SET[st.room];toggle(x,nf);toggle(y,1);open(true)};
+
+/* Scroll-driven hero */
+const stage=document.getElementById('stage'),hero=document.getElementById('hero'),nav=document.getElementById('nav');
+function onScroll(){
+  const r=hero.getBoundingClientRect(),tot=hero.offsetHeight-innerHeight;
+  const t=Math.min(1,Math.max(0,-r.top/tot)), cl=(a,b)=>Math.min(1,Math.max(0,(t-a)/b));
+  const d=.25+.75*cl(0,.3), on=cl(.2,.4), sv=cl(.5,.3);
+  window.__lampD=d;window.__lampE=on;
+  stage.style.setProperty('--on',on);stage.style.setProperty('--s',sv);
+}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="lamp3d.js?v=5"></script>
+</body>
+</html>
